@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+    <title>YELP and GMAPS</title>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AlQbAewbI0bIGV8Doq5Byi0P--YD5N6hvoUHDMvY5IsjrGtF1_yv8UoDuk5eig2K' async defer></script>
+    <script>
+    var myList = {{pub_info|safe}};
+
+    var pubLat = myList["lat"];
+    var pubLon = myList["lon"];
+    var pubName = myList["name"];
+    var pubAddress = myList["pubaddress"]
+    var address = myList["address"];
+    var arg2 = myList["arg2"];
+    var error = myList["error"];
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="{% static 'drinkboiii/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
+    </head>
+
+<body>
+<div id="wrapper">
+    <div id="input">
+        <p class="text">Give me location</p>
+
+        <div class="location">
+            <input type="text" name="Address"></br>
+        </div>
+        <div class="budget">
+            <p class="text">Spending budget</p>
+        </div>
+        <div class="pricing" id="1">
+                I'm barely surviving
+        </div>
+        <div class="pricing" id="2">
+                I can afford
+        </div>
+        <div class="pricing" id="3">
+            It's my payday
+        </div>
+        <div id="button">
+            <p>Recommend something else<p>
+        </div>
+    </div>
+
+    <div id="myMap">
+    </div>
+    <div id="results">
+    </div>
+</div>
+
+<script src="{% static 'drinkboiii/script.js' %}"></script>
+
+</body>
+</html>
+
